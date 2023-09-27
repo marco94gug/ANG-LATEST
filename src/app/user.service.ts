@@ -48,10 +48,6 @@ export class UserService {
   }
 
   deleteUser(user: any) {
-    const index = this.users.indexOf(user);
-
-    if (index > -1) {
-      this.users = this.users.filter((_, id) => index !== id);
-    }
+    this.users = this.users.filter((item) => item.name !== user.name);
   }
 }
