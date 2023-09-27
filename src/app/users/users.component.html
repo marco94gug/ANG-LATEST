@@ -4,7 +4,6 @@
       title
     }}
   </caption>
-  <pre>{{ users | json }}</pre>
   <tr>
     <th>Name</th>
     <th>Last Name</th>
@@ -17,8 +16,8 @@
   </tr>
   <tr
     app-user
-    *ngFor="let user of users"
+    *ngFor="let user of this.service.users"
     [user-data]="user"
-    (onDeleteUser)="onDeleteUser($event)"
+    (deleteUser)="deleteUser($event)"
   ></tr>
 </table>

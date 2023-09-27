@@ -18,7 +18,7 @@ interface User {
 })
 export class UserComponent {
   @Input('user-data') user!: User;
-  @Output('onDeleteUser') userDeleted = new EventEmitter();
+  @Output('deleteUser') userDeleted = new EventEmitter();
 
   constructor(private userService: UserService) {}
 

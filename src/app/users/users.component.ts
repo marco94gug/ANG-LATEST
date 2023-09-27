@@ -6,17 +6,12 @@ import { UserService } from '../user.service';
   templateUrl: 'users.component.html',
   styleUrls: ['users.component.scss'],
 })
-export class UsersComponent implements OnInit {
+export class UsersComponent {
   title = 'Users';
-  public users: any[] = [];
 
   constructor(public service: UserService) {}
 
-  ngOnInit() {
-    this.users = this.service.users;
-  }
-
-  onDeleteUser(user: any) {
+  deleteUser(user: any) {
     this.service.deleteUser(user);
   }
 }
