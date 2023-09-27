@@ -1,5 +1,5 @@
 import { UserService } from './../user.service';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 interface User {
   name: string;
@@ -18,10 +18,11 @@ interface User {
 })
 export class UserComponent {
   @Input('user-data') user!: User;
+  @Output('onDeleteUser') userDeleted = new EventEmitter();
 
   constructor(private userService: UserService) {}
 
   deleteUser() {
-    this.userService.deleteUser(this.user);
+    this.userDeleted.emit(this.user);
   }
 }

@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class UserService {
-  users = [
+  private _users = [
     {
       name: 'Marco',
       lastname: 'Test',
@@ -43,11 +43,11 @@ export class UserService {
     },
   ];
 
-  getUsers() {
-    return this.users;
+  get users() {
+    return this._users;
   }
 
   deleteUser(user: any) {
-    this.users = this.users.filter((item) => item.name !== user.name);
+    this._users = this._users.filter((item) => item.name !== user.name);
   }
 }
