@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../user.service';
+import { UserService } from '../services/user.service';
+import { User } from '../interfaces/user';
 
 @Component({
   selector: 'app-users',
@@ -11,7 +12,7 @@ export class UsersComponent {
 
   constructor(public service: UserService) {}
 
-  deleteUser(user: any) {
+  deleteUser(user: User) {
     this.service.deleteUser(user);
   }
 }

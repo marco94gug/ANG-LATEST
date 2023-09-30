@@ -1,15 +1,6 @@
-import { UserService } from './../user.service';
+import { User } from '../interfaces/user';
+import { UserService } from '../services/user.service';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-
-interface User {
-  name: string;
-  age: number;
-  email: string;
-  lastname: string;
-  fiscalcode: string;
-  phone: string;
-  province: string;
-}
 
 @Component({
   selector: 'tr[app-user]',

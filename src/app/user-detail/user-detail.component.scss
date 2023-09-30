@@ -1,0 +1,31 @@
+.form-group {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid #c0c0c0;
+  margin-bottom: 10px;
+
+  input {
+    flex: 0 0 auto;
+    width: 50%;
+    border: 1px solid #c0c0c0;
+    padding: 6px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.form-footer {
+  text-align: center;
+  padding: 10px;
+
+  .btn-save {
+    background-color: green;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    width: 80px;
+  }
+}
