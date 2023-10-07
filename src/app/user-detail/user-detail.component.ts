@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { UserInterface } from '../interfaces/user';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-user-detail',
@@ -9,7 +10,9 @@ import { UserInterface } from '../interfaces/user';
 export class UserDetailComponent {
   @Input('user-selected-data') user!: UserInterface;
 
+  constructor(private userService: UserService) {}
+
   saveUser() {
-    console.log(this.user);
+    this.userService.updateUser(this.user);
   }
 }

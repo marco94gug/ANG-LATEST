@@ -8,7 +8,7 @@ import { User } from './class/User';
 })
 export class AppComponent {
   title = 'ang-latest';
-  showForm: boolean = false;
+  showForm = false;
   userSelected: User = new User();
 
   updateUser(user: User) {
