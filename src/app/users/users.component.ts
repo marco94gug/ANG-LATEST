@@ -19,6 +19,7 @@ export class UsersComponent {
   }
 
   selectUser(user: UserInterface) {
+    console.log(user.id);
     const userCopy = Object.assign({}, user);
     this.updateUser.emit(userCopy);
   }

@@ -19,4 +19,10 @@ export class AppComponent {
   saved(value: any) {
     this.showForm = !value;
   }
+
+  newUser() {
+    this.userSelected = new User();
+    this.showForm = true;
+    console.log('cliccato');
+  }
 }

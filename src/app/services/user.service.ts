@@ -52,6 +52,12 @@ export class UserService {
     return this._users;
   }
 
+  getUser(id: number): User {
+    const actualUser = this._users.find((user) => user.id === id);
+
+    return actualUser!;
+  }
+
   deleteUser(user: User) {
     this._users = this._users.filter((item) => item.name !== user.name);
   }
@@ -60,5 +66,9 @@ export class UserService {
     this._users = this._users.map((item) =>
       item.id === user.id ? user : item
     );
+  }
+
+  createUser(user: User) {
+    this._users.unshift({ ...user, id: this._users.length + 1 });
   }
 }
