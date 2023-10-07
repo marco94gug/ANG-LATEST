@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
-import { User } from '../interfaces/user';
+import { UserInterface } from '../interfaces/user';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
-  private _users: User[] = [
+  private _users: UserInterface[] = [
     {
+      id: 1,
       name: 'Marco',
       lastname: 'Test',
       email: 'marco.test@gmail.com',
@@ -16,6 +17,7 @@ export class UserService {
       age: 29,
     },
     {
+      id: 2,
       name: 'Pippo',
       lastname: 'Disney',
       email: 'pippo.disney@gmail.com',
@@ -25,6 +27,7 @@ export class UserService {
       age: 43,
     },
     {
+      id: 3,
       name: 'Pluto',
       lastname: 'Disney',
       email: 'pluto.disney@gmail.com',
@@ -34,6 +37,7 @@ export class UserService {
       age: 23,
     },
     {
+      id: 4,
       name: 'Paperino',
       lastname: 'Disney',
       email: 'paperino.disney@gmail.com',
@@ -48,7 +52,7 @@ export class UserService {
     return this._users;
   }
 
-  deleteUser(user: User) {
+  deleteUser(user: UserInterface) {
     this._users = this._users.filter((item) => item.name !== user.name);
   }
 }

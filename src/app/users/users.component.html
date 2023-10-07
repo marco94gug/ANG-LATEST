@@ -19,5 +19,6 @@
     *ngFor="let user of this.service.users"
     [user-data]="user"
     (deleteUser)="deleteUser($event)"
+    (userSelected)="selectUser($event)"
   ></tr>
 </table>

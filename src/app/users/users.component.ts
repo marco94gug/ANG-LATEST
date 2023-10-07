@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { UserService } from '../services/user.service';
-import { User } from '../interfaces/user';
+import { UserInterface } from '../interfaces/user';
 
 @Component({
   selector: 'app-users',
@@ -10,9 +10,16 @@ import { User } from '../interfaces/user';
 export class UsersComponent {
   title = 'Users';
 
+  @Output() updateUser = new EventEmitter<UserInterface>();
+
   constructor(public service: UserService) {}
 
-  deleteUser(user: User) {
+  deleteUser(user: UserInterface) {
     this.service.deleteUser(user);
+  }
+
+  selectUser(user: UserInterface) {
+    const userCopy = Object.assign({}, user);
+    this.updateUser.emit(userCopy);
   }
 }

@@ -5,11 +5,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UsersComponent } from './users/users.component';
 import { UserComponent } from './user/user.component';
+import { FormsModule } from '@angular/forms';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 
 @NgModule({
-  declarations: [AppComponent, UsersComponent, UserComponent, UserDetailComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  declarations: [
+    AppComponent,
+    UsersComponent,
+    UserComponent,
+    UserDetailComponent,
+  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
