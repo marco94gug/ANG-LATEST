@@ -4,6 +4,9 @@
     <app-users (updateUser)="updateUser($event)"></app-users>
   </div>
   <div class="user-detail" *ngIf="showForm">
-    <app-user-detail [user-selected-data]="userSelected"></app-user-detail>
+    <app-user-detail
+      [user-selected-data]="userSelected"
+      (saved)="saved($event)"
+    ></app-user-detail>
   </div>
 </main>

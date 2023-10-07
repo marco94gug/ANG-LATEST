@@ -15,4 +15,8 @@ export class AppComponent {
     this.showForm = true;
     this.userSelected = user;
   }
+
+  saved(value: any) {
+    this.showForm = !value;
+  }
 }

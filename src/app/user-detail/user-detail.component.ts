@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { UserInterface } from '../interfaces/user';
 import { UserService } from '../services/user.service';
 
@@ -9,10 +9,11 @@ import { UserService } from '../services/user.service';
 })
 export class UserDetailComponent {
   @Input('user-selected-data') user!: UserInterface;
-
+  @Output('saved') onSave = new EventEmitter();
   constructor(private userService: UserService) {}
 
   saveUser() {
     this.userService.updateUser(this.user);
+    this.onSave.emit(true);
   }
 }
